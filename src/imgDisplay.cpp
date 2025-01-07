@@ -1,7 +1,13 @@
+// name: Matej Zecic
+// date: 01/07/2025
+// description: This file reads an image and displays it
+
 #include <opencv2/opencv.hpp>
 #include <iostream>
 
 int main() {
+    // main function that reads an image and displays it
+
     // load and read the image
     std::string imagePath = "/Users/matejzecic/code/cs5330_project1/data/objects.jpg";
     cv::Mat image = cv::imread(imagePath);
