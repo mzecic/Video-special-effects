@@ -35,7 +35,7 @@ LDLIBS = -lopencv_core -lopencv_highgui -lopencv_imgcodecs -lopencv_videoio -lop
 BINDIR = ../bin
 
 # Source Files
-PROGRAMS = imgDisplay vidDisplay faceDetect imgMod macbeth
+PROGRAMS = imgDisplay vidDisplay imgMod macbeth
 
 # Default Target: Build all programs
 all: $(PROGRAMS)
@@ -44,7 +44,7 @@ all: $(PROGRAMS)
 imgDisplay: imgDisplay.o
 	$(CC) $(CXXFLAGS) $^ -o $(BINDIR)/$@ $(LDFLAGS) $(LDLIBS)
 
-vidDisplay: vidDisplay.o
+vidDisplay: vidDisplay.o filters.o faceDetect.o
 	$(CC) $(CXXFLAGS) $^ -o $(BINDIR)/$@ $(LDFLAGS) $(LDLIBS)
 
 faceDetect: faceDetect.o
@@ -54,6 +54,9 @@ imgMod: imgMod.o
 	$(CC) $(CXXFLAGS) $^ -o $(BINDIR)/$@ $(LDFLAGS) $(LDLIBS)
 
 macbeth: macbeth.o
+	$(CC) $(CXXFLAGS) $^ -o $(BINDIR)/$@ $(LDFLAGS) $(LDLIBS)
+
+blur: timeBlur.o
 	$(CC) $(CXXFLAGS) $^ -o $(BINDIR)/$@ $(LDFLAGS) $(LDLIBS)
 
 # Rule to Compile .cpp to .o

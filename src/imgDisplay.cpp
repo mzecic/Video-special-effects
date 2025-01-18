@@ -9,7 +9,7 @@ int main() {
     // main function that reads an image and displays it
 
     // load and read the image
-    std::string imagePath = "/Users/matejzecic/code/cs5330_project1/data/objects.jpg";
+    std::string imagePath = "../data/objects.jpg";
     cv::Mat image = cv::imread(imagePath);
 
     // error check, check if the image is loaded
@@ -32,3 +32,5 @@ int main() {
     }
     return 0;
 }
+
+
